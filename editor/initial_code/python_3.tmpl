@@ -1,0 +1,27 @@
+{% comment %}New initial code template{% endcomment %}
+{% block env %}{% endblock env %}
+
+{% block start %}
+# feel free to change table structure in any way
+LETTERS = [ch + sign for ch in 'ABCD' for sign in ('+','','-')] + ['F']
+MIN_PERCENTAGES = 90, 85, 80, 77, 73, 70, 67, 63, 60, 57, 53, 50, 0
+
+
+def ryerson_letter_grade(pct: int) -> str:
+    # your code here
+    return ""
+{% endblock start %}
+
+{% block example %}
+print('Example:')
+print(ryerson_letter_grade(45))
+{% endblock %}
+
+{% block tests %}
+{% for t in tests %}
+assert {% block call %}ryerson_letter_grade({{t.input|p_args}}){% endblock %} == {% block result %}{{t.answer|p}}{% endblock %}{% endfor %}
+{% endblock %}
+
+{% block final %}
+print("The mission is done! Click 'Check Solution' to earn rewards!")
+{% endblock final %}
