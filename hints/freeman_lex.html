@@ -1,0 +1,131 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <i>I have no idea how to start solving this mission.</i>
+    </div>
+    <div class="answer">
+        <p>
+            💡 The idea is to find a range from percentage tuple to which the input percentage belongs and return respective letter grade from the grade list.
+        </p>
+        <pre class="brush: python">
+LETTERS = [ch + sign for ch in 'ABCD' for sign in ('+','','-')] + ['F']
+MIN_PERCENTAGES = 90, 85, 80, 77, 73, 70, 67, 63, 60, 57, 53, 50, 0
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>Ok, what should I start from?</i>
+    </div>
+    <div class="answer">
+        <p>
+            Let's declare a variable <b class="code">i</b> with the initial value <b class="code">0</b>. It is the index of correct range inside percentage tuple.
+            You are going to iterate over the tuple (increase current index <b class="code">i</b>), until the input percentage fits into the range. Do this iteration, using <a target="_blank" href="https://www.w3schools.com/python/python_while_loops.asp">while loop</a>.
+        </p>
+        <pre class="brush: python">
+i = 0
+while ...:
+    i += 1
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>
+            Please help me to write correct condition.
+        </i>
+    </div>
+    <div class="answer">
+        <p>
+            Since each percentage in the tuple is a lower border of specific range, it means that if the input percentage is not less then current percentage from the tuple - it fits into the current range. But if it is less, it means you need to compare with the next percentage in the tuple.
+        </p>
+        <p>
+            So, you move over the tuple (increase the <b class="code">i</b>) if current percentage from tuple is bigger than the input percentage.
+        </p>
+        <pre class="brush: python">
+i = 0
+while MIN_PERCENTAGES[i] > pct:
+    i += 1
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>
+            I found the correct range. What to do next?
+        </i>
+    </div>
+    <div class="answer">
+        <p>
+            Since the letter grades in the list are placed respective to the percentages in the tuple, you just need to use the index you've found to get the correct letter grade from the list.
+        </p>
+        <pre class="brush: python">
+LETTERS[i]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>So, how my final solution should look like?</i>
+    </div>
+    <div class="answer">
+        <p>
+            You just need to wrap your code into function expression and return letter grade.
+        </p>
+        <p>Here is the whole solution:</p>
+        <pre class="brush: python">
+LETTERS = [ch + sign for ch in 'ABCD' for sign in ('+','','-')] + ['F']
+MIN_PERCENTAGES = 90, 85, 80, 77, 73, 70, 67, 63, 60, 57, 53, 50, 0
+
+def ryerson_letter_grade(pct: int) -> str:
+    
+    i = 0
+    while MIN_PERCENTAGES[i] > pct:
+        i += 1
+    
+    return LETTERS[i]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Python Ninnjaa!</i>
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            In this solution the list of all grades is built. The index of grade equals its percentage. The anonymous (lambda) function is also used here.
+        </p>
+        <pre class="brush: python">
+GRADE = ['F']*50 + ['D-']*3 + ['D']*4  + ['D+']*3 + ['C-']*3 + \
+['C']*4  + ['C+']*3 + ['B-']*3 + ['B']*4  + ['B+']*3 + \
+['A-']*5 + ['A']*5  + ['A+']*11
+
+ryerson_letter_grade = lambda percent: GRADE[min(percent, 100)]
+        </pre>
+        <p>
+            In this solution grades are in the single string which is splitted by whitespaces. The grade list and percentage tuple are the arguments of zip() function - which takes values with the same index.
+        </p>
+        <pre class="brush: python">
+def ryerson_letter_grade(pct: int) - str:
+
+    for letter_grade, percentage in zip(
+        'A+  A   A-  B+  B   B-  C+  C   C-  D+  D   D-  F'.split(),
+        (90, 85, 80, 77, 73, 70, 67, 63, 60, 57, 53, 50, 0)):
+        if pct >= percentage:
+
+            return letter_grade
+        </pre>
+        <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>Thanks! I know and understand more now! Everything works fine!</i>
+    </div>
+    <div class="answer">
+        👍 Glad to hear it!
+    </div>
+</div>
+</body>

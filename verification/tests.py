@@ -12,41 +12,41 @@ TESTS = {
     "Basics": [
         {
             "input": [45],
-            "answer": "F"
+            "answer": "F",
         },
         {
             "input": [62],
-            "answer": "C-"
-        }
+            "answer": "C-",
+        },
     ],
     "Extra": [
         {
             "input": [89],
-            "answer": "A"
+            "answer": "A",
         },
         {
             "input": [107],
-            "answer": "A+"
+            "answer": "A+",
         },
         {
             "input": [0],
-            "answer": "F"
+            "answer": "F",
         },
         {
             "input": [49],
-            "answer": "F"
+            "answer": "F",
         },
         {
             "input": [90],
-            "answer": "A+"
+            "answer": "A+",
         },
         {
             "input": [100],
-            "answer": "A+"
+            "answer": "A+",
         },
         {
             "input": [89],
-            "answer": "A"
-        }
+            "answer": "A",
+        },
     ]
 }

@@ -1,41 +1,35 @@
 <p>
-Given the grade percentage for the course, calculate and return the letter grade that would appear in the Ryerson’s grade transcript, as defined on the page  <a href="https://www.ryerson.ca/registrar/faculty/grading/gradescales_ugrad/">Ryerson Grade Scales</a>. The letter grade should be returned as a string that consists of the uppercase letter followed by the possible modifier  "+"  or  "-" . 
+    Given the grade percentage for the course, calculate and return the letter grade that would appear in the Ryerson’s grade transcript, as defined on the page <a target="_blank" href="https://www.torontomu.ca/studentguide/grades/#grades">Ryerson Grade Scales</a>. The letter grade should be returned as a string that consists of the uppercase letter followed by the possible modifier "+" or "-". 
 </p>
 
 <p>
-    <strong>Input: </strong> Int. Grade percentage.
+    <strong>Input:</strong> Grade percentage as {% if is_js %}a number{% else %}an integer{% endif %}.
 </p>
 
 <p>
-    <strong>Output: </strong> Str.  The letter grade.
+    <strong>Output:</strong> The letter grade as a string.
 </p>
 
 
 <!-- Put some usage examples -->
 <div class="for_info_only">
     <p>
-        <strong>Example:</strong>
+        <strong>Examples:</strong>
     </p>
-<p><i>The initial code contains grade table as raw string. Feel free to change it in any way.</i></p>
+    <p>
+        <i>The initial code contains grade and percentage sequences. Feel free to change them in any way.</i>
+    </p>
 
-{% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">
-ryersonLetterGrade(45) == "F"
-ryersonLetterGrade(62) == "C-"
-</pre>
-{% else %}
-<pre class="brush: python">
-ryerson_letter_grade(45) == "F"
-ryerson_letter_grade(62) == "C-"
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 <p>
     <strong>Precondition:</strong>
-    <i>argument can be from 0 to 150</i>
+    <i>argument can be from 0 to 150.</i>
 </p>
 
-<p><i>The mission was taken from Python CCPS 109 Fall 2018. It is taught for Ryerson Chang School of Continuing Education by <a href="http://www.scs.ryerson.ca/~ikokkari/">Ilkka Kokkarinen</a></i></p>
+<p>
+    <i>The mission was taken from Python CCPS 109 Fall 2018. It is taught for Ryerson Chang School of Continuing Education by <a href="http://www.scs.ryerson.ca/~ikokkari/">Ilkka Kokkarinen</a></i>
+</p>
 
 
